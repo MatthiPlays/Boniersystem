@@ -2,9 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main_cl_mainLayout"
+    android:id="@+id/fragment_menu_cl_mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".util.MainActivity">
+    tools:context=".menu.MenuFragment">
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
