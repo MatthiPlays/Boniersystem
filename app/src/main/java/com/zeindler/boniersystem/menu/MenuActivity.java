@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -25,20 +24,26 @@ public class MenuActivity extends AppCompatActivity implements NavigationBarView
     private void init(){
         bottomNavigationView = findViewById(R.id.activity_menu_men_mainMenu);
         bottomNavigationView.setOnItemSelectedListener(this);
+
+        //Startseite ist standardmäßig das Tisch Fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.activity_menu_fl_fragLayout,new TischFragment()).commit();
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int idTisch = R.id.bottom_navigation_menu_itemTische;
+
         int itemId = item.getItemId();
         Fragment selectedFragment = null;
-        switch(2){
-            case R.id.botto:
-                selectedFragment = new TischFragment();
-                break;
 
+        if (itemId == R.id.bottom_navigation_menu_itemTische) {
+            selectedFragment = new TischFragment();
         }
 
+
+        if (selectedFragment != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_menu_fl_fragLayout,selectedFragment).commit();
+            return true;
+        }
 
         return false;
     }
