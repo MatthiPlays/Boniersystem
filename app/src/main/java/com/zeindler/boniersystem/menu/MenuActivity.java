@@ -38,6 +38,12 @@ public class MenuActivity extends AppCompatActivity implements NavigationBarView
         if (itemId == R.id.bottom_navigation_menu_itemTische) {
             selectedFragment = new TischFragment();
         }
+        if(itemId == R.id.bottom_navigation_menu_item2) {
+
+        }
+        if(itemId == R.id.bottom_navigation_menu_itemSettings) {
+            selectedFragment = new SettingsFragment();
+        }
 
 
         if (selectedFragment != null) {
