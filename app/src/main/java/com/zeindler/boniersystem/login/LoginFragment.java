@@ -96,6 +96,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     //Neuer Kellner
     private void openDialogNewKellner(){
         //TODO: Dialog für neuen Kellner
+        //TEST
+        System.out.println("new Kellner created");
+        Connector.newKellner("Anika");
+
     }
 
 

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.zeindler.boniersystem.R;
+import com.zeindler.boniersystem.server.Connector;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -51,32 +52,6 @@ public class TischFragment extends Fragment implements View.OnClickListener {
 
     private void newBestellung(){
         System.out.println("Neue Bestellung");
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //TODO: TEST HIER WIRD NUR GETEST OB DIE VERBINDUNG ZUM SERVER FUNKTIONIERT
-                String messageToSend = "JAWOHL LETS FUCKING GOOOOOO!!!!";
-                String serverUrl = null;
-                try {
-                    serverUrl = "http://10.0.0.72/messageReceiver.php?message=" + URLEncoder.encode(messageToSend, "UTF-8");
-
-
-                    URL url = new URL(serverUrl);
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                    urlConnection.setRequestMethod("GET");
-
-                    int responseCode = urlConnection.getResponseCode();
-                } catch (UnsupportedEncodingException e) {
-                    throw new RuntimeException(e);
-                } catch (ProtocolException e) {
-                    throw new RuntimeException(e);
-                } catch (MalformedURLException e) {
-                    throw new RuntimeException(e);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }).start();
 
 
 
