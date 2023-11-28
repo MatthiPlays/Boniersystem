@@ -1,5 +1,6 @@
 package com.zeindler.boniersystem.menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.zeindler.boniersystem.R;
+import com.zeindler.boniersystem.bestellen.BestellActivity;
 import com.zeindler.boniersystem.server.Connector;
 
 import java.io.IOException;
@@ -51,9 +53,8 @@ public class TischFragment extends Fragment implements View.OnClickListener {
     }
 
     private void newBestellung(){
-        System.out.println("Neue Bestellung");
-
-
+        Intent intent = new Intent(getContext(), BestellActivity.class);
+        startActivity(intent);
 
     }
 
